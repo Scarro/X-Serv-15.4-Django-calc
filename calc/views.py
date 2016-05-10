@@ -14,29 +14,29 @@ def resta(request, numero1, numero2):
 	resta = int(numero1) - int(numero2)
 	context = {
 		'operacion' : 'resta',
-		'resultado' : resta,
+		'resultado' : resta
 	}
-	return render(request, 'calc/index.html',context)
+	return render(request, 'calc/index.html', context)
 
 def multiplicacion(request, numero1, numero2):
-	multiplicacion = int(numero1) * int(numero2)
+	mult = int(numero1) * int(numero2)
 	context = {
 		'operacion' : 'multiplicacion',
-		'resultado' : multiplicacion,
+		'resultado' : mult
 	}
-	return render(request, 'calc/index.html',context)
+	return render(request, 'calc/index.html', context)
 
-def division(request, numero1, numero2):
+def division (request, numero1, numero2):
 	try:
 		division = int(numero1) / int(numero2)
 		context = {
-			'operacion' : 'division',
-			'resultado' : division,
+			'operacion': 'division',
+			'resultado': division
 		}
 		template = 'calc/index.html'
 	except ZeroDivisionError:
 		context = {
-			'error': "Error al dividir entre 0, prueba otra vez."
+			'error': 'Error: divides entre 0'
 		}
 		template = 'calc/error.html'
-	return render(request, template ,context)
+	return render(request, template, context)
