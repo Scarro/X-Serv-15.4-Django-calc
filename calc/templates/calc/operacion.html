@@ -1,0 +1,7 @@
+{% extends 'calc/base.html' %}
+
+{% block title %}{{ operacion }}{% endblock title %}
+
+{% block content %}
+<p>El resultado de la <em>{{ operacion }}</em> ({{ operando1 }} {{simbolo}} {{operando2}}) es: <b>{{resultado}}</b></p>
+{% endblock content %}
